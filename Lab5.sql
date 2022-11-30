@@ -163,6 +163,6 @@ begin
 		VALUES(@HONV,@TENLOT,@TENNV,@MANV,@NGSINH,@DCHI,@PHAI,@LUONG,@MA_NQL,@PHG)
 end;
 go
-exec sp_themNV N'Trần',N'Văn',N'An','012','1995-04-10',N'Đồng Nai','Nam',30000,;
+exec sp_themNV N'Trần',N'Văn',N'An','012','1995-04-10',N'Đồng Nai','Nam',30000,6;
 
 
