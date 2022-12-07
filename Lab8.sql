@@ -175,72 +175,78 @@ insert into CTHD values(1021,'ST08',5)
 insert into CTHD values(1021,'TV01',7)
 insert into CTHD values(1021,'TV02',10)
 
------------Bài 1 ------------
--------------câu 1------------
+-----------BÃ i 1 ------------
+-------------cÃ¢u 1------------
 ALTER TABLE SANPHAM 
 ADD CONSTRAINT SANPHAM_GIA CHECK(GIA > 500)
-------------câu 2-----------
+------------cÃ¢u 2-----------
 
 ALTER TABLE CTHD
 ADD CONSTRAINT CTHD_SL CHECK(SL >= 1)
--------------câu 3-----------------
+-------------cÃ¢u 3-----------------
 ALTER TABLE KHACHHANG
 ADD CONSTRAINT KH_NGDK_NGSINH CHECK(NGDK >= NGSINH)
-------------Bài 2-----------
------------câu 1-------------
+------------BÃ i 2-----------
+-----------cÃ¢u 1-------------
 SELECT * FROM SANPHAM,KHACHHANG
-------------câu 2------------
+------------cÃ¢u 2------------
+SELECT * 
+INTO SANPHAM1
+FROM  SANPHAM
 
--------------câu 3------------
+SELECT * 
+INTO KHACHHANG1
+FROM  KHACHHANG
+-------------cÃ¢u 3------------
 UPDATE SANPHAM SET GIA =GIA/(100/5)+GIA
 WHERE NUOCSX = N'Thai Lan'
-------------câu 4------------
+------------cÃ¢u 4------------
 UPDATE SANPHAM SET GIA =GIA/(100/5)+GIA
 WHERE NUOCSX = N'Trung Quoc'
--------------câu 5-----------
+-------------cÃ¢u 5-----------
 UPDATE KHACHHANG SET LOAIKH ='VIP' 
 WHERE (NGDK<cast('2011/1/1' as date) AND DOANHSO>=10000000) 
 OR (NGDK>cast('2011/1/1' as date) AND DOANHSO >=2000000)
 
--------------Bài 3------------
------------câu 1-------------
+-------------BÃ i 3------------
+-----------cÃ¢u 1-------------
 SELECT MASP,TENSP
 FROM  SANPHAM
 WHERE NUOCSX='Trung Quoc'
-----------câu 2---------
+----------cÃ¢u 2---------
 SELECT MASP,TENSP
 FROM  SANPHAM
 WHERE DVT='cay' OR DVT='quyen'
----------câu 3---------
+---------cÃ¢u 3---------
 SELECT MASP,TENSP
 FROM  SANPHAM
 WHERE MASP LIKE 'B%01'
----------câu 4---------
+---------cÃ¢u 4---------
 SELECT MASP,TENSP
 FROM  SANPHAM
 WHERE NUOCSX='Trung Quoc' AND GIA BETWEEN 30000 AND 40000
------câu 5------
+-----cÃ¢u 5------
 SELECT MASP,TENSP
 FROM  SANPHAM
 WHERE (NUOCSX='Trung Quoc' OR NUOCSX='Thai Lan') AND GIA BETWEEN 30000 AND 40000
------câu 6------
+-----cÃ¢u 6------
 SELECT SOHD,TRIGIA
 FROM  HOADON
 WHERE NGHD=cast('2007/01/01' as date) OR NGHD=cast('2007/01/02' as date) 
------câu 7------
+-----cÃ¢u 7------
 SELECT SOHD,TRIGIA
 FROM  HOADON
 WHERE MONTH(NGHD)=1 AND YEAR(NGHD)=2007
 ORDER BY  NGHD ASC,TRIGIA DESC
------câu 8------
+-----cÃ¢u 8------
 SELECT A.MAKH,HOTEN
 FROM  HOADON A, KHACHHANG B
 WHERE A.MAKH=B.MAKH AND NGHD=cast('2007/01/01' as date) 
------câu 9------
+-----cÃ¢u 9------
 SELECT SOHD,TRIGIA
 FROM  HOADON A, NHANVIEN B
 WHERE A.MANV=B.MANV AND NGHD=cast('2006/10/28' as date)  AND HOTEN='Nguyen Van B' 
------câu 10------
+-----cÃ¢u 10------
 SELECT C.MASP, TENSP
 FROM  HOADON A, KHACHHANG B, CTHD C, SANPHAM D
 WHERE A.MAKH=B.MAKH AND A.SOHD=C.SOHD AND C.MASP=D.MASP AND
