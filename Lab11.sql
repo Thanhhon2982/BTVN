@@ -102,7 +102,10 @@ begin
  print 'sinh vien '+ @masv+ ' thi '+cast(@dem as nvarchar(10))+ 'mon'
 end
 go
-exec kiemtra '001'-----------Câu 4 Viết một trigger kiểm tra sỉ số lớp khi thêm một sinh viên mới vào danh sách sinh viên thì hệ thống cập nhật lại siso của lớp, mỗi lớp tối đa 10SV, nếu thêm vào &gt;10 thì thông báo lớp đầy và hủy giao dịchcreate trigger kt_ss
+exec kiemtra '001'
+
+-----------Câu 4 Viết một trigger kiểm tra sỉ số lớp khi thêm một sinh viên mới vào danh sách sinh viên thì hệ thống cập nhật lại siso của lớp, mỗi lớp tối đa 10SV, nếu thêm vào &gt;10 thì thông báo lớp đầy và hủy giao dịch
+create trigger kt_ss
 on sinhvien for insert
 as
 begin
