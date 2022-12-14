@@ -66,7 +66,6 @@ return(select (avg(Diemthi)) from KetQua where @masv = MaSV)
 end
 go
 print('Điểm trung bình là: '+CONVERT(nvarchar,dbo.diemtb('002')))
-gom MaSV
 -------------Câu 2 Viết hàm bằng 2 cách (table – value fuction và multistatement value function) tính điểm trung bình của cả lớp, thông tin gồ, Hoten, ĐiemTB, sử dụng hàm diemtb ở câu 1
 create function Tinhdiem(@malop nvarchar(10))
 returns table 
